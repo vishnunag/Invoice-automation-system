@@ -1,0 +1,16 @@
+<h2>Client List</h2>
+<table>
+  <tr>
+    <th>Name</th><th>Email</th><th>Service</th><th>Amount</th><th>Date</th><th>Send</th>
+  </tr>
+  {% for client in clients %}
+  <tr>
+    <td>{{ client.name }}</td>
+    <td>{{ client.email }}</td>
+    <td>{{ client.service }}</td>
+    <td>{{ client.amount }}</td>
+    <td>{{ client.date }}</td>
+    <td><a href="{% url 'send_invoice' client.id %}">Send Invoice</a></td>
+  </tr>
+  {% endfor %}
+</table>
